@@ -223,12 +223,14 @@ Example report: each optimization trial ~36s on RTX 3090; 20 trials ~721s.
 
 ClassWise-CRF improves segmentation performance on **LoveDA** and **Vaihingen** (validation & test).
 
-> If you’d like, insert your paper tables as images here:
-> - `assets/table_loveda.png`
-> - `assets/table_vaihingen.png`
+
 
 <p align="center">
-  <img src="assets/table_loveda.png" width="92%" />
+  <img src="assets/table1.png" width="92%" />
+</p>
+
+<p align="center">
+  <img src="assets/table2.png" width="92%" />
 </p>
 
 ---
