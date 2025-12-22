@@ -138,7 +138,21 @@ DATA/
 
 > [!IMPORTANT]
 > Many scripts use absolute paths like `/ZQFSSD/crf/DATA/...`; update those paths to your local dataset location.
-
+> **Input `.npy` must contain ALL classes (multi-channel probability map), not a single predicted label/mask.**  
+> To ensure the best fusion quality, each `.npy` file should store the **per-class probability map** for one image:
+> 
+> - Value: float probabilities in **[0, 1]**
+> - Normalization: for every pixel **∑_{c=1..C} P[c, i, j] = 1**
+>
+> ✅ Correct example (LoveDA, C=7):
+> - `DATA/loveda/convnexttpre_npy/xxx.npy` → `P ∈ R^{7×H×W}`
+>
+> ❌ Incorrect examples:
+> - Single-channel hard label map: `R^{H×W}` (argmax result)
+> - A “prediction image” (PNG/JPG) of labels
+>
+> **Why:** ClassWise-CRF performs **class-wise weighted fusion** and uses **-log(P)** as CRF unary terms.
+> If you provide only hard labels, the fusion loses uncertainty information and the CRF unary becomes unreliable.
 ---
 
 ## ▶️ Usage
@@ -275,6 +289,7 @@ Zhu, Qinfeng, Yunxi Jiang, and Lei Fan. "ClassWise-CRF: Category-Specific Fusion
 
 ## 📬 Contact
 
+- Qinfeng Zhu: qinfeng.zhu21@student.xjtlu.edu.cn
 - Lei Fan (corresponding): Lei.Fan@xjtlu.edu.cn
 
 ---
