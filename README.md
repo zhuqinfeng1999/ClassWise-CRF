@@ -12,8 +12,9 @@
 </p>
 
 **Paper:** *ClassWise-CRF: Category-Specific Fusion for Enhanced Semantic Segmentation of Remote Sensing Imagery*  
-Accepted by *Neural Networks* (DOI forthcoming).  
+Accepted by *Neural Networks* (https://doi.org/10.1016/j.neunet.2025.108485).  
 arXiv: https://arxiv.org/abs/2504.21491
+Neural Networks: https://doi.org/10.1016/j.neunet.2025.108485
 
 </div>
 
