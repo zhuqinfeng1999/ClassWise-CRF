@@ -1,6 +1,6 @@
 <div align="center">
 
-# ClassWise-CRF  
+# Classwise-CRF: Category-specific fusion for enhanced semantic segmentation of remote sensing imagery
 ### Category-Specific Fusion + CRF Refinement for Remote Sensing Semantic Segmentation
 
 <p>
